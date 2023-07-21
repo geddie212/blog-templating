@@ -1,3 +1,6 @@
+# Code by Paul Ged (last updated 07/21/2023)
+# A test app checking the dynamic generation of HTML using an SQL database
+
 from flask import Flask, render_template
 import post
 
@@ -28,16 +31,16 @@ def get_blog(num):
     # html post using the jinja inputs from the dictionary
     return render_template("post.html", title=title, subtitle=subtitle, body=body)
 
-
+# about static page (currently)
 @app.route('/about')
 def about():
     return render_template("about.html")
 
-
+# contact static page (currently)
 @app.route('/contact')
 def contact():
     return render_template("contact.html")
 
-
+# run from here
 if __name__ == "__main__":
     app.run(debug=True)
